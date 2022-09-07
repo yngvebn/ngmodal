@@ -1,54 +1,60 @@
 :host(.modal-container) {
-  position: fixed;
-  left: 50%;
-  top: 40px;
-  min-width: 200px;
-  display: block;
-  max-width: 450px;
-  pointer-events: none;
+    position: fixed;
+    left: 50%;
+    top: 40px;
+    min-width: 200px;
+    display: block;
+    max-width: 450px;
+    pointer-events: none;
+    &.drawer{
+        bottom: 0;
+        top: auto;
+    }
 }
 
 :host(.modal-overlay) {
-  display: block;
-  position: fixed;
-  background: #00000033;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    display: block;
+    position: fixed;
+    background: #00000033;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .modal {
-  pointer-events: all;
-
-  transform: translateX(-50%);
-
-  background-color: white;
-  box-shadow: 0px 5px 9px #00000059;
+    pointer-events: all;
+    
+    transform: translateX(-50%);
+    
+    background-color: white;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 header {
-  font-size: 24px;
-  color: white;
-  background: teal;
-  padding: 2rem 1rem;
-  position: relative;
-  button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: none;
+    font-size: 24px;
     color: white;
-    cursor: pointer;
-  }
+    background: teal;
+    padding: 2rem 1rem;
+    
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
 }
 
 section {
-  padding: 1rem 1rem;
+    padding: 1rem 1rem;
 }
 
 footer {
-  padding: 1rem 1rem;
+    padding: 1rem 1rem;
 }
