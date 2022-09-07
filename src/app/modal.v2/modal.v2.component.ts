@@ -274,7 +274,7 @@ export class ModalV2Service {
 
         const overlayComponent = createComponent(ModalOverlay, {
             environmentInjector,
-            projectableNodes: [[container.location.nativeElement]]
+            //projectableNodes: [[container.location.nativeElement]]
         });
         overlayComponent.instance.modalRef = modalRef;
         overlayComponent.changeDetectorRef.detectChanges();
@@ -287,7 +287,7 @@ export class ModalV2Service {
         container.changeDetectorRef.detectChanges();
 
         container.location.nativeElement.classList.add(options?.type ?? 'default');
-
+        this.document.body.appendChild(container.location.nativeElement);
         console.log('container', container.location.nativeElement);
 
         closeHandler.pipe(first()).subscribe(() => {
@@ -296,6 +296,7 @@ export class ModalV2Service {
             container.changeDetectorRef.detectChanges();
             modalContent.destroy();
             container.destroy();
+            container.location.nativeElement.remove();
             overlayComponent.destroy();
             overlayComponent.location.nativeElement.remove();
             modalRef.ngOnDestroy();
