@@ -244,7 +244,7 @@ export class ModalV2Service {
         const environmentInjector = createEnvironmentInjector(
                 [
                     {
-                        provide: ModalRef < T >,
+                        provide: ModalRef <T>,
                         useValue: modalRef
                     }
                 ],
