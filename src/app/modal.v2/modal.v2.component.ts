@@ -172,6 +172,7 @@ export class ModalRef<T> extends ModalBaseRef implements OnDestroy {
         '[@inOutAnimation]': '',
         class: 'modal-overlay'
     },
+    standalone: true,
     template: `
         <ng-content></ng-content> `,
     styleUrls: ['./modal.v2.component.scss'],
